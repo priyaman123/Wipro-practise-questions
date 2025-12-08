@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Music Library - User Panel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="user-page">
+  <div class="container">
+    <h1>User Panel</h1>
+    <a href="index.html" class="back-link">← Home</a>
+
+    <section class="panel">
+      <h2>User Registration</h2>
+      <form id="user-register-form">
+        <div class="form-row">
+          <label>Name</label>
+          <input type="text" id="reg-name" required />
+        </div>
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" id="reg-email" required />
+        </div>
+        <div class="form-row">
+          <label>Password</label>
+          <input type="password" id="reg-password" required />
+        </div>
+        <div class="form-row">
+          <label>Phone</label>
+          <input type="text" id="reg-phone" required />
+        </div>
+        <button type="submit">Register</button>
+      </form>
+      <p id="register-status" class="status"></p>
+    </section>
+
+    <section class="panel">
+      <h2>User Login</h2>
+      <form id="user-login-form">
+        <div class="form-row">
+          <label>Email</label>
+          <input type="email" id="login-email" required />
+        </div>
+        <div class="form-row">
+          <label>Password</label>
+          <input type="password" id="login-password" required />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <p id="login-status" class="status"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Available Songs</h2>
+      <button id="load-songs-btn">Load Songs</button>
+      <table id="songs-table">
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th><th>Singer</th><th>Album</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p id="songs-error" class="error"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Create Playlist</h2>
+      <form id="create-playlist-form">
+        <div class="form-row">
+          <label>Playlist Name</label>
+          <input type="text" id="playlist-name" required />
+        </div>
+        <div class="form-row">
+          <label>User ID</label>
+          <input type="number" id="playlist-userId" required />
+        </div>
+        <button type="submit">Create Playlist</button>
+      </form>
+      <p id="playlist-create-status" class="status"></p>
+    </section>
+
+    <section class="panel">
+      <h2>User Playlists</h2>
+      <div class="panel-header">
+        <div class="form-row inline">
+          <label>User ID</label>
+          <input type="number" id="playlists-userId" />
+        </div>
+        <button id="load-playlists-btn">Load Playlists</button>
+      </div>
+      <table id="playlists-table">
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th><th>User ID</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p id="playlists-error" class="error"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Playlist Details & Actions</h2>
+      <div class="panel-header">
+        <div class="form-row inline">
+          <label>Playlist ID</label>
+          <input type="number" id="selected-playlist-id" />
+        </div>
+        <button id="load-playlist-details-btn">Load Details</button>
+      </div>
+
+      <h3>Songs in Playlist</h3>
+      <table id="playlist-songs-table">
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th><th>Singer</th><th>Album</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <h3>Add Song to Playlist</h3>
+      <form id="add-song-to-playlist-form">
+        <div class="form-row inline">
+          <label>Playlist ID</label>
+          <input type="number" id="addsong-playlist-id" required />
+        </div>
+        <div class="form-row inline">
+          <label>Song ID</label>
+          <input type="number" id="addsong-song-id" required />
+        </div>
+        <button type="submit">Add Song</button>
+      </form>
+
+      <h3>Playback Actions</h3>
+      <div class="button-row">
+        <button data-action="play" class="playback-btn">Play</button>
+        <button data-action="stop" class="playback-btn">Stop</button>
+        <button data-action="repeat" class="playback-btn">Repeat</button>
+        <button data-action="shuffle" class="playback-btn">Shuffle</button>
+      </div>
+
+      <p id="playlist-actions-status" class="status"></p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Music Library - Admin Panel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="admin-page">
+  <div class="container">
+    <h1>Admin Panel</h1>
+    <a href="index.html" class="back-link">← Home</a>
+
+    <section class="panel">
+      <h2>Admin Login</h2>
+      <form id="admin-login-form">
+        <div class="form-row">
+          <label>Username</label>
+          <input type="text" id="admin-username" value="admin" required />
+        </div>
+        <div class="form-row">
+          <label>Password</label>
+          <input type="password" id="admin-password" value="admin" required />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <p id="admin-login-status" class="status"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Users</h2>
+      <div class="panel-header">
+        <button id="load-users-btn">Load Users</button>
+        <span id="user-count"></span>
+      </div>
+      <table id="users-table">
+        <thead>
+          <tr>
+            <th>ID</th><th>Name</th><th>Email</th><th>Phone</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p id="users-error" class="error"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Add Song</h2>
+      <form id="add-song-form">
+        <div class="form-row">
+          <label>Song Name</label>
+          <input type="text" id="song-name" required />
+        </div>
+        <div class="form-row">
+          <label>Singer</label>
+          <input type="text" id="song-singer" />
+        </div>
+        <div class="form-row">
+          <label>Music Director</label>
+          <input type="text" id="song-director" />
+        </div>
+        <div class="form-row">
+          <label>Album</label>
+          <input type="text" id="song-album" />
+        </div>
+        <div class="form-row">
+          <label>Release Date</label>
+          <input type="date" id="song-releaseDate" />
+        </div>
+        <button type="submit">Add Song</button>
+      </form>
+      <p id="song-add-status" class="status"></p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
